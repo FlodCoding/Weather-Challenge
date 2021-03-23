@@ -21,7 +21,6 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
-
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
@@ -38,7 +37,6 @@ private val LightColorPalette = lightColors(
     secondary = yellow200,
     background = littlerBeige
 )
-
 
 val Colors.cardBackgroundColor: Color
     get() = if (isLight) Color.White else dark1

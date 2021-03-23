@@ -48,14 +48,3 @@ fun MyApp() {
         Main(viewModel)
     }
 }
-
-
-
-
-
-
-
-
-
-
-

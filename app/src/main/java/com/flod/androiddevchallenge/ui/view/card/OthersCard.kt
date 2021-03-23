@@ -1,3 +1,18 @@
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.flod.androiddevchallenge.ui.view
 
 import androidx.compose.foundation.Image
@@ -6,7 +21,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -47,7 +61,8 @@ fun OthersCard(detail: Detail) {
                         .weight(1f)
                         .semantics(true) {
                             contentDescription = uvIndexSemantics
-                        }, verticalAlignment = Alignment.CenterVertically
+                        },
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
                     Image(
 
@@ -56,16 +71,17 @@ fun OthersCard(detail: Detail) {
                         modifier = Modifier.size(30.dp)
                     )
 
-                    Column(modifier = Modifier
-                        .padding(15.dp)
-                        .clearAndSetSemantics { }) {
+                    Column(
+                        modifier = Modifier
+                            .padding(15.dp)
+                            .clearAndSetSemantics { }
+                    ) {
                         Text(text = uvIndexTitle, style = MaterialTheme.typography.body2)
                         Text(text = detail.uvIndex, modifier = Modifier.padding(top = 5.dp))
                     }
                 }
 
-
-                //precipitation
+                // precipitation
                 val precipitationSemantics = "${stringResource(id = R.string.precipitation)}: ${detail.precipitation}"
                 Row(
                     modifier = Modifier
@@ -79,22 +95,24 @@ fun OthersCard(detail: Detail) {
                         modifier = Modifier.size(30.dp)
                     )
 
-                    Column(modifier = Modifier
-                        .padding(15.dp)
-                        .clearAndSetSemantics { }) {
+                    Column(
+                        modifier = Modifier
+                            .padding(15.dp)
+                            .clearAndSetSemantics { }
+                    ) {
                         Text(text = stringResource(id = R.string.precipitation), style = MaterialTheme.typography.body2)
                         Text(text = detail.precipitation, modifier = Modifier.padding(top = 5.dp))
                     }
                 }
-
             }
-
 
             // Visibility
             val visibilitySemantics = "${stringResource(id = R.string.visibility)}: detail.visibility"
-            Row(modifier = Modifier
-                .padding(horizontal = 10.dp)
-                .semantics(true) { contentDescription = visibilitySemantics }) {
+            Row(
+                modifier = Modifier
+                    .padding(horizontal = 10.dp)
+                    .semantics(true) { contentDescription = visibilitySemantics }
+            ) {
 
                 Row(modifier = Modifier.weight(1f), verticalAlignment = Alignment.CenterVertically) {
                     Image(
@@ -107,11 +125,9 @@ fun OthersCard(detail: Detail) {
                         Text(text = stringResource(id = R.string.visibility), style = MaterialTheme.typography.body2)
                         Text(text = detail.visibility, modifier = Modifier.padding(top = 5.dp))
                     }
-
                 }
 
-
-                //Pressure
+                // Pressure
                 val pressureSemantics = "${stringResource(id = R.string.pressure_full_name)}: ${detail.pressure}"
                 Row(
                     modifier = Modifier
@@ -130,8 +146,6 @@ fun OthersCard(detail: Detail) {
                         Text(text = detail.pressure, modifier = Modifier.padding(top = 5.dp))
                     }
                 }
-
-
             }
         }
     }

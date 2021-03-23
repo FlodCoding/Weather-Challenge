@@ -1,7 +1,21 @@
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 @file:Suppress("DEPRECATION", "SpellCheckingInspection")
 
 package com.flod.androiddevchallenge.data
-
 
 import com.flod.androiddevchallenge.model.AQI
 import com.flod.androiddevchallenge.model.Detail
@@ -10,7 +24,6 @@ import com.flod.androiddevchallenge.model.Temperature
 import com.flod.androiddevchallenge.model.WeatherType
 import com.flod.androiddevchallenge.model.Wind
 import java.util.Date
-
 
 val loctionList: List<Simple> = listOf(
     Simple(
@@ -52,8 +65,7 @@ val loctionList: List<Simple> = listOf(
         temperature = Temperature(-3)
     ),
 
-    )
-
+)
 
 val fuzhouDetail = Detail(
     id = 1,
@@ -149,8 +161,7 @@ val fuzhouDetail = Detail(
             )
         ),
 
-
-        ),
+    ),
     hourlyForecast = listOf(
         Pair("Now", 23f), Pair("12:00", 23f), Pair("13:00", 25f), Pair("14:00", 26f), Pair("15:00", 26f),
         Pair("16:00", 24f), Pair("17:00", 23f), Pair("18:00", 21f), Pair("19:00", 19f), Pair("20:00", 18f),
@@ -159,7 +170,6 @@ val fuzhouDetail = Detail(
         Pair("07:00", 18f), Pair("08:00", 19f), Pair("09:00", 21f), Pair("10:00", 22f)
     )
 )
-
 
 val beijingDetail: Detail = Detail(
     id = 2,
@@ -254,7 +264,6 @@ val beijingDetail: Detail = Detail(
         Pair("07:00", 12), Pair("08:00", 13), Pair("09:00", 14), Pair("10:00", 17)
     )
 )
-
 
 val shanghaiDetail: Detail = Detail(
     id = 3,

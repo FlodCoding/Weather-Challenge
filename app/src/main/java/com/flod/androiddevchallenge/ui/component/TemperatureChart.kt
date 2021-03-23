@@ -1,3 +1,18 @@
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.flod.androiddevchallenge.ui.component
 
 import android.graphics.Paint
@@ -11,7 +26,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.AndroidPath
 import androidx.compose.ui.graphics.Color
-
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
 import androidx.compose.ui.graphics.nativeCanvas
@@ -41,7 +55,6 @@ fun TemperatureChart(
     innerSpacer: Dp = 10.dp
 ) {
 
-
     val density = LocalDensity.current.density
     val scaleXPx = density * scaleX.value
     val textPaddingPx = density * linePadding.value
@@ -49,7 +62,6 @@ fun TemperatureChart(
     val min = list.minByOrNull { it.second.toFloat() }?.second?.toFloat() ?: return
     val max = list.maxByOrNull { it.second.toFloat() }?.second?.toFloat() ?: return
     if ((max - min) <= 0f) return
-
 
     val path = AndroidPath()
     val paint = Paint()
@@ -59,23 +71,21 @@ fun TemperatureChart(
     paint.textSize = textSizePx
     paint.color = textStyle.color.takeOrElse { LocalContentColor.current }.toArgb()
 
-
     val innerSpacerPx = density * innerSpacer.value
     val offsetX = textSizePx + innerSpacerPx
     val offsetY = textPaddingPx + textSizePx + innerSpacerPx
 
-    Layout(modifier = modifier.horizontalScroll(rememberScrollState()),
+    Layout(
+        modifier = modifier.horizontalScroll(rememberScrollState()),
         content = {
             Canvas(
                 modifier = Modifier.fillMaxSize()
             ) {
 
-
                 var lastX = 0f
                 var lastY = 0f
                 var lastControlX = 0f
                 var lastControlY = 0f
-
 
                 val curveHeight = size.height - (offsetY) * 2
                 val bottomTextY = size.height - innerSpacerPx
@@ -87,23 +97,20 @@ fun TemperatureChart(
 
                     when (index) {
                         0 -> {
-                            //first point
+                            // first point
                             path.moveTo(x - textSizePx, y)
 
                             lastControlX = scaleXPx * smoothness
                             lastControlY = y
-
                         }
                         list.size - 1 -> {
-                            //last point
+                            // last point
 
                             val controlX = x - (x - lastX) * smoothness
                             path.cubicTo(lastControlX, lastControlY, controlX, y, x + textSizePx, y)
-
-
                         }
                         else -> {
-                            //mid point
+                            // mid point
 
                             val next = list[index + 1]
                             val nextFractionY = (max - next.second.toFloat()) / (max - min)
@@ -121,40 +128,32 @@ fun TemperatureChart(
                                 path.cubicTo(lastControlX, lastControlY, controlX, controlY, x, y)
                             }
 
-
-
                             lastControlX = x + scaleXPx * smoothness
                             lastControlY = k * lastControlX + b
-
                         }
                     }
 
-
-                    //drawText
+                    // drawText
                     drawIntoCanvas {
 
                         val topY = y - textPaddingPx
-                        //val bottomY = y + textPaddingPx + textSizePx
+                        // val bottomY = y + textPaddingPx + textSizePx
 
                         val topOffsetX = paint.measureText(pair.second.toString()) / 2
                         val bottomOffsetX = paint.measureText(pair.first) / 2
 
                         it.nativeCanvas.drawText("${pair.second.toInt()}°", x - topOffsetX, topY, paint)
                         it.nativeCanvas.drawText(pair.first, x - bottomOffsetX, bottomTextY, paint)
-
                     }
-
 
                     lastX = x
                     lastY = y
                 }
 
-
                 drawPath(path = path, color = lineColor, style = Stroke(5f))
-
-
             }
-        }) { measurables, constraints ->
+        }
+    ) { measurables, constraints ->
         val width = (list.size - 1) * scaleXPx + offsetX * 2
         layout(width.toInt(), constraints.maxHeight) {
             val placeable = measurables[0].measure(constraints)

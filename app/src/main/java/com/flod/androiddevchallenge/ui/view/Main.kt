@@ -1,3 +1,18 @@
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.flod.androiddevchallenge.ui.view
 
 import androidx.compose.foundation.ScrollState
@@ -53,7 +68,6 @@ fun Main(viewModel: MainViewModel) {
     val drawerState = rememberDrawerState(DrawerValue.Closed)
     val coroutineScope = rememberCoroutineScope()
 
-
     val scrollState = rememberScrollState()
     ModalDrawer(
         drawerBackgroundColor = MaterialTheme.colors.background,
@@ -83,12 +97,8 @@ fun Main(viewModel: MainViewModel) {
             Header(data, scrollState.value)
 
             Body(data, scrollState)
-
-
         }
     }
-
-
 }
 
 private val BodyPadding = 260.dp
@@ -114,10 +124,9 @@ fun Title(modifier: Modifier, detail: Detail, coroutineScope: CoroutineScope, dr
             )
         }
 
-
-        //Top location name
+        // Top location name
         val currentLocationDesc = "${stringResource(R.string.current_location)} ${detail.locationName}," +
-                if (detail.isMyLocation) stringResource(R.string.is_my_location) else ""
+            if (detail.isMyLocation) stringResource(R.string.is_my_location) else ""
         Row(
             modifier = Modifier
                 .align(Alignment.Center)
@@ -139,10 +148,7 @@ fun Title(modifier: Modifier, detail: Detail, coroutineScope: CoroutineScope, dr
                 style = MaterialTheme.typography.h6
             )
         }
-
     }
-
-
 }
 
 @Composable
@@ -151,14 +157,14 @@ fun Header(detail: Detail, scroll: Int) {
     val range = with(LocalDensity.current) { (BodyPadding - HeaderPadding).toPx() }
     val alpha = 1 - (scroll / range).coerceAtMost(1f)
 
-
     Column(
         Modifier
             .padding(start = 30.dp)
             .alpha(alpha)
             .graphicsLayer {
                 translationY = -scroll.toFloat()
-            }) {
+            }
+    ) {
 
         Spacer(modifier = Modifier.height(HeaderPadding))
         Text(
@@ -169,7 +175,7 @@ fun Header(detail: Detail, scroll: Int) {
 
         Row(Modifier.padding(horizontal = 10.dp, vertical = 20.dp)) {
 
-            //Wind Speed and direction
+            // Wind Speed and direction
             val windDesc = stringResource(R.string.wind_direction_and_speed, detail.wind.direction, detail.wind.speed)
             Column(
                 modifier = Modifier
@@ -181,7 +187,7 @@ fun Header(detail: Detail, scroll: Int) {
                 Text(text = stringResource(id = R.string.wind), style = MaterialTheme.typography.caption)
             }
 
-            //Air Quality Index
+            // Air Quality Index
             val aqiDesc = "${stringResource(id = R.string.aqi_full_name)}: ${detail.aqi.value},${{ detail.aqi.desc }}"
             Column(
                 modifier = Modifier
@@ -193,8 +199,7 @@ fun Header(detail: Detail, scroll: Int) {
                 Text(text = stringResource(id = R.string.aqi), style = MaterialTheme.typography.caption)
             }
 
-
-            //Humidity percent
+            // Humidity percent
             val humidityDesc = "${stringResource(id = R.string.humidity)}: ${detail.humidity}"
             Column(
                 modifier = Modifier
@@ -205,12 +210,8 @@ fun Header(detail: Detail, scroll: Int) {
                 Text(text = detail.humidity)
                 Text(text = stringResource(id = R.string.humidity), style = MaterialTheme.typography.caption)
             }
-
-
         }
     }
-
-
 }
 
 @Composable
@@ -230,8 +231,6 @@ fun Body(detail: Detail, scrollState: ScrollState) {
 
         OthersCard(detail = detail)
     }
-
-
 }
 
 @Preview
@@ -249,4 +248,3 @@ fun MainDarkPreview() {
         Main(viewModel = MainViewModel())
     }
 }
-

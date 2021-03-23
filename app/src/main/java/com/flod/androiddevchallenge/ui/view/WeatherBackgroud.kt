@@ -1,3 +1,18 @@
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.flod.androiddevchallenge.ui.view
 
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -19,8 +34,8 @@ fun WeatherBackground(type: WeatherType) {
     val fillSize = Modifier.fillMaxSize()
 
     when (type) {
-        //Maybe it will be more accurate according to the real time,
-        //but it is only for demonstration at the moment
+        // Maybe it will be more accurate according to the real time,
+        // but it is only for demonstration at the moment
         WeatherType.Sunny -> {
             if (isSystemInDarkTheme()) {
                 MoonBackground(fillSize)
@@ -41,5 +56,4 @@ fun WeatherBackground(type: WeatherType) {
         WeatherType.Undefined -> {
         }
     }
-
 }

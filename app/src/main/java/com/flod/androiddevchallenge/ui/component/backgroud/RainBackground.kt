@@ -1,3 +1,18 @@
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.flod.androiddevchallenge.ui.component.backgroud
 
 import androidx.compose.foundation.Canvas
@@ -14,7 +29,6 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import kotlin.math.cos
 import kotlin.math.sin
-
 
 @Composable
 fun RainBackground(
@@ -52,13 +66,10 @@ fun RainBackground(
                 speed = speed
             )
         }
-
-
     }
 
-
     Canvas(modifier = modifier.fillMaxSize()) {
-        //draw rain drop
+        // draw rain drop
         list.forEach {
             val start = it.getStart(this)
             val end = it.getEnd(this)
@@ -77,18 +88,11 @@ fun RainBackground(
             if (it.fall()) {
                 it.randomFormTop()
             }
-
-
         }
-
-
     }
 
-
     CloudBackground(modifier = modifier.fillMaxSize(), color = cloudColor)
-
 }
-
 
 class RainDrop(
     randomRange: Rect = Rect(0f, 0f, 1f, 1f),
@@ -101,7 +105,6 @@ class RainDrop(
     speed: Int = 1,
     val length: Dp
 ) : RandomObject(randomRange, heightMultiple, multipleX, multipleY, alpha, strokeWidth, radian, speed) {
-
 
     companion object {
         fun randomCreate(
@@ -126,14 +129,12 @@ class RainDrop(
                 radian = radian,
                 speed = speed
             )
-
         }
     }
 
     fun getStart(scope: DrawScope): Offset {
         return Offset(multipleX * scope.size.width, multipleY * scope.size.height)
     }
-
 
     fun getEnd(scope: DrawScope): Offset {
 
@@ -143,15 +144,10 @@ class RainDrop(
             multipleY * scope.size.height - sin(radian) * length,
         )
     }
-
-
 }
-
 
 @Preview
 @Composable
 fun RainBackgroundPreview() {
     RainBackground(Modifier.fillMaxSize())
 }
-
-

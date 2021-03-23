@@ -29,7 +29,6 @@ val blue700 = Color(0xFF1976D2)
 
 val yellow200 = Color(0xFFFFF59D)
 
-
 val dark1 = Color(0xFF1A1A1A)
 val dark2 = Color(0xFF333333)
 
