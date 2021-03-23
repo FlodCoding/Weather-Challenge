@@ -1,11 +1,24 @@
 package com.flod.androiddevchallenge.ui.view
 
 import androidx.compose.foundation.ScrollState
-import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.*
+import androidx.compose.material.DrawerState
+import androidx.compose.material.DrawerValue
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.ModalDrawer
+import androidx.compose.material.Text
+import androidx.compose.material.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
@@ -26,8 +39,6 @@ import com.flod.androiddevchallenge.MainViewModel
 import com.flod.androiddevchallenge.R
 import com.flod.androiddevchallenge.model.Detail
 import com.flod.androiddevchallenge.model.Simple
-import com.flod.androiddevchallenge.model.WeatherType
-import com.flod.androiddevchallenge.ui.component.backgroud.*
 import com.flod.androiddevchallenge.ui.theme.MyThemedPreview
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
@@ -225,7 +236,7 @@ fun Body(detail: Detail, scrollState: ScrollState) {
 
 @Preview
 @Composable
-fun MainLightPreview(){
+fun MainLightPreview() {
     MyThemedPreview {
         Main(viewModel = MainViewModel())
     }
@@ -233,7 +244,7 @@ fun MainLightPreview(){
 
 @Preview
 @Composable
-fun MainDarkPreview(){
+fun MainDarkPreview() {
     MyThemedPreview(true) {
         Main(viewModel = MainViewModel())
     }

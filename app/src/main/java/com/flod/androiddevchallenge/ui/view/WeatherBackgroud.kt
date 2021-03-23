@@ -5,7 +5,13 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.flod.androiddevchallenge.model.WeatherType
-import com.flod.androiddevchallenge.ui.component.backgroud.*
+import com.flod.androiddevchallenge.ui.component.backgroud.CloudBackground
+import com.flod.androiddevchallenge.ui.component.backgroud.CloudyMoonBackground
+import com.flod.androiddevchallenge.ui.component.backgroud.CloudySunBackground
+import com.flod.androiddevchallenge.ui.component.backgroud.MoonBackground
+import com.flod.androiddevchallenge.ui.component.backgroud.RainBackground
+import com.flod.androiddevchallenge.ui.component.backgroud.SnowBackground
+import com.flod.androiddevchallenge.ui.component.backgroud.SunnyBackground
 
 @Composable
 fun WeatherBackground(type: WeatherType) {

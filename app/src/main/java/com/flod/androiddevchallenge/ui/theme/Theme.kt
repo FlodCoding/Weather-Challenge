@@ -16,7 +16,12 @@
 package com.flod.androiddevchallenge.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material.*
+import androidx.compose.material.Colors
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
+import androidx.compose.material.darkColors
+import androidx.compose.material.lightColors
+
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
@@ -58,8 +63,10 @@ fun MyTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() (
 }
 
 @Composable
-fun MyThemedPreview( darkTheme: Boolean = false,
-                     content: @Composable () -> Unit){
+fun MyThemedPreview(
+    darkTheme: Boolean = false,
+    content: @Composable () -> Unit
+) {
     MyTheme(darkTheme = darkTheme) {
         Surface(color = MaterialTheme.colors.background) {
             content()

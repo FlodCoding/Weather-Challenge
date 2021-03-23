@@ -1,6 +1,11 @@
 package com.flod.androiddevchallenge.ui.view
 
-import androidx.compose.foundation.layout.*
+
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -30,13 +35,16 @@ fun HourlyForecastCard(temp: Temperature, list: List<Pair<String, Number>>) {
                 .height(200.dp)
                 .padding(vertical = 15.dp)
         ) {
-            val lowHighTempDesc = stringResource( R.string.low_high_temp, temp.min.toString(), temp.max.toString())
+            val lowHighTempDesc = stringResource(R.string.low_high_temp, temp.min.toString(), temp.max.toString())
             Row(
                 Modifier
                     .padding(horizontal = 10.dp)
                     .semantics { contentDescription = lowHighTempDesc }, verticalAlignment = Alignment.CenterVertically
             ) {
-                Text(text = title, style = MaterialTheme.typography.subtitle2,modifier = Modifier.clearAndSetSemantics{})
+                Text(
+                    text = title,
+                    style = MaterialTheme.typography.subtitle2,
+                    modifier = Modifier.clearAndSetSemantics {})
                 Spacer(Modifier.weight(1f))
                 Text(text = "${temp.min}° / ${temp.max}°°", fontSize = 12.sp)
             }

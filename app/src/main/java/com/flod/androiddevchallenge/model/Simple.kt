@@ -2,7 +2,9 @@ package com.flod.androiddevchallenge.model
 
 import com.flod.androiddevchallenge.R
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
+import java.util.Locale
+
 
 data class Simple(
     val id: Long = -1,
@@ -32,13 +34,13 @@ data class Simple(
         }
     }
 
-    fun mapWeatherTypeStringRes(): Int{
-        return    when(type){
+    fun mapWeatherTypeStringRes(): Int {
+        return when (type) {
             WeatherType.Sunny -> R.string.weather_type_sunny
             WeatherType.Cloudy -> R.string.weather_type_cloud
             WeatherType.Overcast -> R.string.weather_type_overcast
-            WeatherType.Rain ->  R.string.weather_type_rain
-            WeatherType.Snow ->  R.string.weather_type_snow
+            WeatherType.Rain -> R.string.weather_type_rain
+            WeatherType.Snow -> R.string.weather_type_snow
             WeatherType.Undefined -> R.string.weather_type_unknown
         }
 

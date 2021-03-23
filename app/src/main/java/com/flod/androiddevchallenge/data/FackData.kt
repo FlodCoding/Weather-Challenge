@@ -9,7 +9,8 @@ import com.flod.androiddevchallenge.model.Simple
 import com.flod.androiddevchallenge.model.Temperature
 import com.flod.androiddevchallenge.model.WeatherType
 import com.flod.androiddevchallenge.model.Wind
-import java.util.*
+import java.util.Date
+
 
 val loctionList: List<Simple> = listOf(
     Simple(

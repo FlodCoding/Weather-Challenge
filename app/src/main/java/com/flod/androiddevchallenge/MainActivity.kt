@@ -21,7 +21,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.view.WindowCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.flod.androiddevchallenge.ui.theme.MyTheme
@@ -44,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 // Start building your app here!
 @Composable
 fun MyApp() {
-    val viewModel:MainViewModel = viewModel()
+    val viewModel: MainViewModel = viewModel()
     Surface(color = MaterialTheme.colors.background) {
         Main(viewModel)
     }

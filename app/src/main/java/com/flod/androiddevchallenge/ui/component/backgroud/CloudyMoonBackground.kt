@@ -13,7 +13,7 @@ fun CloudyMoonBackground(
 
     CloudBackground(modifier = modifier, color = cloudColor)
 
-    MoonBackground(modifier = modifier, moonColor = moonColor,showStar = false)
+    MoonBackground(modifier = modifier, moonColor = moonColor, showStar = false)
 
 
 }
