@@ -7,7 +7,7 @@ import com.flod.androiddevchallenge.model.Simple
 
 class FakeWeatherRepository : WeatherRepository {
 
-    private val _datails = ArrayList(datailList)
+    private val _datails = arrayListOf(fuzhouDetail, beijingDetail, shanghaiDetail, hongkongDetail, moscowDetail)
 
     private val _locations = ArrayList(loctionList)
 
