@@ -3,7 +3,12 @@
 package com.flod.androiddevchallenge.data
 
 
-import com.flod.androiddevchallenge.model.*
+import com.flod.androiddevchallenge.model.AQI
+import com.flod.androiddevchallenge.model.Detail
+import com.flod.androiddevchallenge.model.Simple
+import com.flod.androiddevchallenge.model.Temperature
+import com.flod.androiddevchallenge.model.WeatherType
+import com.flod.androiddevchallenge.model.Wind
 import java.util.*
 
 val loctionList: List<Simple> = listOf(
