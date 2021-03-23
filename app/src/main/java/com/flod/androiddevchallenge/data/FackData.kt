@@ -6,9 +6,6 @@ package com.flod.androiddevchallenge.data
 import com.flod.androiddevchallenge.model.*
 import java.util.*
 
-val datailList: ArrayList<Detail>
-    get() = arrayListOf(fuzhouDetail, beijingDetail, shanghaiDetail, hongkongDetail, moscowDetail)
-
 val loctionList: List<Simple> = listOf(
     Simple(
         id = 1,
