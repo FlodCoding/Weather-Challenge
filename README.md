@@ -24,6 +24,10 @@ A simple and beautiful weather app, intuitively and dynamically show the current
 
 <img src="/results/screenshot_5.png" width="260">
 
+
+## Something Found
+- when start Ui testing, should stop Layout Inspector, seems conflict
+- can not add semantics inside Canvas, Canvas is the smallest unit
 ## License
 ```
 Copyright 2020 The Android Open Source Project
