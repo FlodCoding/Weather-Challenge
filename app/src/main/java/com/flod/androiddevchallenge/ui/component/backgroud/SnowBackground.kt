@@ -26,6 +26,7 @@ import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.flod.androiddevchallenge.ui.theme.MyThemedPreview
 
 @Composable
 fun SnowBackground(
@@ -124,7 +125,17 @@ class SnowDrop(
 
 @Preview
 @Composable
-fun SnowBackgroundPreview() {
+fun SnowLightPreview() {
+    MyThemedPreview(false) {
+        SnowBackground(Modifier.fillMaxSize())
+    }
+}
 
-    SnowBackground(Modifier.fillMaxSize())
+
+@Preview
+@Composable
+fun SnowDarkPreview() {
+    MyThemedPreview(true) {
+        SnowBackground(Modifier.fillMaxSize())
+    }
 }

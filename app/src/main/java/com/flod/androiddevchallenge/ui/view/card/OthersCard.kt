@@ -32,9 +32,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.flod.androiddevchallenge.R
+import com.flod.androiddevchallenge.data.FakeWeatherRepository
 import com.flod.androiddevchallenge.model.Detail
+import com.flod.androiddevchallenge.ui.theme.MyThemedPreview
 import com.flod.androiddevchallenge.ui.theme.cardBackgroundColor
 
 @Composable
@@ -150,3 +153,22 @@ fun OthersCard(detail: Detail) {
         }
     }
 }
+
+@Preview
+@Composable
+fun OthersCardLightPreview() {
+    val detail = FakeWeatherRepository().getLocationWeather(1)
+    MyThemedPreview {
+        OthersCard(detail)
+    }
+}
+
+@Preview
+@Composable
+fun OthersCardDarkPreview() {
+    val detail = FakeWeatherRepository().getLocationWeather(1)
+    MyThemedPreview(true) {
+        OthersCard(detail)
+    }
+}
+

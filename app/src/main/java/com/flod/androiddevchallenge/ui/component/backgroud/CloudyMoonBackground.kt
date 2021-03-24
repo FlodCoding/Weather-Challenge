@@ -15,9 +15,12 @@
  */
 package com.flod.androiddevchallenge.ui.component.backgroud
 
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
+import com.flod.androiddevchallenge.ui.theme.MyThemedPreview
 
 @Composable
 fun CloudyMoonBackground(
@@ -29,4 +32,14 @@ fun CloudyMoonBackground(
     CloudBackground(modifier = modifier, color = cloudColor)
 
     MoonBackground(modifier = modifier, moonColor = moonColor, showStar = false)
+}
+
+
+@Preview
+@Composable
+fun CloudyMoonDarkPreview() {
+    MyThemedPreview(true) {
+        CloudyMoonBackground(Modifier.fillMaxSize())
+    }
+
 }

@@ -29,6 +29,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import com.flod.androiddevchallenge.ui.theme.MyThemedPreview
 
 @Composable
 fun CloudBackground(
@@ -66,6 +67,17 @@ fun CloudBackground(
 
 @Preview
 @Composable
-fun OvercastBackgroundPreview() {
-    CloudBackground(Modifier.fillMaxSize())
+fun OvercastLightPreview() {
+    MyThemedPreview {
+        CloudBackground(Modifier.fillMaxSize())
+    }
+
+}
+
+@Preview
+@Composable
+fun OvercastDarkPreview() {
+    MyThemedPreview(true) {
+        CloudBackground(Modifier.fillMaxSize())
+    }
 }

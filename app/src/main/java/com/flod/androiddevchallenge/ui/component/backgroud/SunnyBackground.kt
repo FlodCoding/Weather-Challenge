@@ -29,6 +29,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import com.flod.androiddevchallenge.ui.theme.MyThemedPreview
 
 @Composable
 fun SunnyBackground(
@@ -61,8 +62,11 @@ fun SunnyBackground(
     }
 }
 
+
 @Preview
 @Composable
-fun SunnyBackgroundPreview() {
-    SunnyBackground(Modifier.fillMaxSize())
+fun SunnyLightPreview() {
+    MyThemedPreview(false) {
+        SunnyBackground(Modifier.fillMaxSize())
+    }
 }

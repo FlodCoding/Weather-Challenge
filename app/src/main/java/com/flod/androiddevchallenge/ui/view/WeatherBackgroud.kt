@@ -17,8 +17,10 @@ package com.flod.androiddevchallenge.ui.view
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import com.flod.androiddevchallenge.model.WeatherType
 import com.flod.androiddevchallenge.ui.component.backgroud.CloudBackground
 import com.flod.androiddevchallenge.ui.component.backgroud.CloudyMoonBackground
@@ -27,6 +29,7 @@ import com.flod.androiddevchallenge.ui.component.backgroud.MoonBackground
 import com.flod.androiddevchallenge.ui.component.backgroud.RainBackground
 import com.flod.androiddevchallenge.ui.component.backgroud.SnowBackground
 import com.flod.androiddevchallenge.ui.component.backgroud.SunnyBackground
+import com.flod.androiddevchallenge.ui.theme.MyThemedPreview
 
 @Composable
 fun WeatherBackground(type: WeatherType) {
@@ -55,5 +58,92 @@ fun WeatherBackground(type: WeatherType) {
         WeatherType.Snow -> SnowBackground(fillSize)
         WeatherType.Undefined -> {
         }
+    }
+}
+
+@Preview
+@Composable
+fun SunnyLightPreview(){
+    MyThemedPreview{
+        SunnyBackground(Modifier.fillMaxWidth())
+    }
+}
+
+
+@Preview
+@Composable
+fun MoonDarkPreview(){
+    MyThemedPreview(true){
+        MoonBackground(Modifier.fillMaxWidth())
+    }
+}
+
+@Preview
+@Composable
+fun CloudyLightPreview() {
+    MyThemedPreview{
+        CloudySunBackground(Modifier.fillMaxSize())
+    }
+
+}
+
+@Preview
+@Composable
+fun CloudyMoonDarkPreview() {
+    MyThemedPreview(true){
+        CloudyMoonBackground(Modifier.fillMaxSize())
+    }
+
+}
+
+@Preview
+@Composable
+fun OvercastLightPreview() {
+    MyThemedPreview {
+        CloudBackground(Modifier.fillMaxSize())
+    }
+
+}
+
+@Preview
+@Composable
+fun OvercastDarkPreview() {
+    MyThemedPreview (true){
+        CloudBackground(Modifier.fillMaxSize())
+    }
+}
+
+@Preview
+@Composable
+fun RainLightPreview() {
+    MyThemedPreview(false) {
+        RainBackground(Modifier.fillMaxSize())
+    }
+}
+
+@Preview
+@Composable
+fun RainDarkPreview() {
+    MyThemedPreview(true) {
+        RainBackground(Modifier.fillMaxSize())
+    }
+
+}
+
+
+@Preview
+@Composable
+fun SnowLightPreview() {
+    MyThemedPreview(false) {
+        SnowBackground(Modifier.fillMaxSize())
+    }
+}
+
+
+@Preview
+@Composable
+fun SnowDarkPreview() {
+    MyThemedPreview(true) {
+        SnowBackground(Modifier.fillMaxSize())
     }
 }

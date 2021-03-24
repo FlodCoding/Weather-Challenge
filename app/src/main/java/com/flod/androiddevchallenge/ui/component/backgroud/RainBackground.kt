@@ -27,6 +27,7 @@ import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.flod.androiddevchallenge.ui.theme.MyThemedPreview
 import kotlin.math.cos
 import kotlin.math.sin
 
@@ -148,6 +149,19 @@ class RainDrop(
 
 @Preview
 @Composable
-fun RainBackgroundPreview() {
-    RainBackground(Modifier.fillMaxSize())
+fun RainLightPreview() {
+    MyThemedPreview(false) {
+        RainBackground(Modifier.fillMaxSize())
+    }
 }
+
+@Preview
+@Composable
+fun RainDarkPreview() {
+    MyThemedPreview(true) {
+        RainBackground(Modifier.fillMaxSize())
+    }
+
+}
+
+

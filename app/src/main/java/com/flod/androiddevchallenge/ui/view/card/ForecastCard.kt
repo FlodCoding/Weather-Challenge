@@ -36,10 +36,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.flod.androiddevchallenge.R
+import com.flod.androiddevchallenge.data.FakeWeatherRepository
 import com.flod.androiddevchallenge.model.Simple
+import com.flod.androiddevchallenge.ui.theme.MyThemedPreview
 import com.flod.androiddevchallenge.ui.theme.cardBackgroundColor
 
 @Composable
@@ -70,11 +73,11 @@ fun ForecastCard(list: List<Simple>) {
                 itemsIndexed(list) { index, item ->
                     val weekEEE = if (index == 0) stringResource(R.string.today) else item.getWeekEEE()
                     val itemSetSemantics = "$weekEEE ${
-                    stringResource(
-                        R.string.low_high_temp,
-                        item.temperature.min.toString(),
-                        item.temperature.min.toString()
-                    )
+                        stringResource(
+                            R.string.low_high_temp,
+                            item.temperature.min.toString(),
+                            item.temperature.min.toString()
+                        )
                     }, ${stringResource(item.mapWeatherIconRes())}"
                     Column(
                         modifier = Modifier
@@ -102,5 +105,25 @@ fun ForecastCard(list: List<Simple>) {
                 }
             }
         }
+    }
+}
+
+@Preview
+@Composable
+fun ForecastCardLightPreview() {
+    val repository = FakeWeatherRepository()
+
+    MyThemedPreview {
+        ForecastCard(repository.getLocationWeather(1).futureDayForecast)
+    }
+}
+
+
+@Preview
+@Composable
+fun ForecastCardDarkPreview() {
+    val repository = FakeWeatherRepository()
+    MyThemedPreview(true) {
+        ForecastCard(repository.getLocationWeather(1).futureDayForecast)
     }
 }

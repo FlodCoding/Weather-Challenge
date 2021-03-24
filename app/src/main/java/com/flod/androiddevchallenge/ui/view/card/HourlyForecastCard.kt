@@ -30,11 +30,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.flod.androiddevchallenge.R
+import com.flod.androiddevchallenge.data.FakeWeatherRepository
 import com.flod.androiddevchallenge.model.Temperature
 import com.flod.androiddevchallenge.ui.component.TemperatureChart
+import com.flod.androiddevchallenge.ui.theme.MyThemedPreview
 import com.flod.androiddevchallenge.ui.theme.cardBackgroundColor
 
 @Composable
@@ -67,5 +70,26 @@ fun HourlyForecastCard(temp: Temperature, list: List<Pair<String, Number>>) {
 
             TemperatureChart(list = list)
         }
+    }
+}
+
+
+@Preview
+@Composable
+fun HourlyForecastCardLightPreview() {
+    val detail = FakeWeatherRepository().getLocationWeather(1)
+    MyThemedPreview {
+        HourlyForecastCard(detail.temperature,detail.hourlyForecast)
+    }
+}
+
+
+
+@Preview
+@Composable
+fun HourlyForecastCardDarkPreview() {
+    val detail = FakeWeatherRepository().getLocationWeather(1)
+    MyThemedPreview(true) {
+        HourlyForecastCard(detail.temperature,detail.hourlyForecast)
     }
 }
