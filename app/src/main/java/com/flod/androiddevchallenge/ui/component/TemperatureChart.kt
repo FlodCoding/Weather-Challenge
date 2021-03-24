@@ -19,6 +19,7 @@ import android.graphics.Paint
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.LocalContentColor
 import androidx.compose.material.MaterialTheme
@@ -34,8 +35,10 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.flod.androiddevchallenge.ui.theme.MyThemedPreview
 
 /**
  * unfinished, maybe can more flexible
@@ -159,5 +162,16 @@ fun TemperatureChart(
             val placeable = measurables[0].measure(constraints)
             placeable.place(0, 0)
         }
+    }
+}
+
+@Preview
+@Composable
+fun ChartLightPreview() {
+    MyThemedPreview {
+        val list = List(10) {
+            Pair(it.toString(), (10..20).random())
+        }
+        TemperatureChart(Modifier.padding(30.dp), list)
     }
 }

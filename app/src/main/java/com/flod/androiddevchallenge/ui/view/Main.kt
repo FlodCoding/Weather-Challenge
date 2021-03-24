@@ -89,9 +89,7 @@ fun Main(viewModel: MainViewModel) {
                 Modifier
                     .padding(top = 40.dp, start = 20.dp, end = 20.dp)
                     .fillMaxWidth(),
-                data,
-                coroutineScope,
-                drawerState
+                data, coroutineScope, drawerState
             )
 
             Header(data, scrollState.value)
@@ -110,6 +108,7 @@ fun Title(modifier: Modifier, detail: Detail, coroutineScope: CoroutineScope, dr
 
     Box(modifier = modifier) {
         // drawer open button
+
         IconButton(
             modifier = Modifier.align(Alignment.CenterStart),
             onClick = {
