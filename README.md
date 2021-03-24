@@ -1,4 +1,4 @@
-# Put title of your app here
+# Duo Weather(Jetpact Compose)
 
 
 ![Workflow result](https://github.com/FlodCoding/Weather-Challenge/workflows/Check/badge.svg)
@@ -14,7 +14,7 @@ A simple and beautiful weather app, intuitively and dynamically show the current
 - Seven kinds animated weather
 - Scrollable temperature curve chart
 - Light & dark themes
-
+- Accessibility and some uiTest
 
 ## :camera_flash: Screenshots
 <!-- You can add more screenshots here if you like -->
