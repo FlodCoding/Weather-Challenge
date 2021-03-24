@@ -63,17 +63,16 @@ fun WeatherBackground(type: WeatherType) {
 
 @Preview
 @Composable
-fun SunnyLightPreview(){
-    MyThemedPreview{
+fun SunnyLightPreview() {
+    MyThemedPreview {
         SunnyBackground(Modifier.fillMaxWidth())
     }
 }
 
-
 @Preview
 @Composable
-fun MoonDarkPreview(){
-    MyThemedPreview(true){
+fun MoonDarkPreview() {
+    MyThemedPreview(true) {
         MoonBackground(Modifier.fillMaxWidth())
     }
 }
@@ -81,19 +80,17 @@ fun MoonDarkPreview(){
 @Preview
 @Composable
 fun CloudyLightPreview() {
-    MyThemedPreview{
+    MyThemedPreview {
         CloudySunBackground(Modifier.fillMaxSize())
     }
-
 }
 
 @Preview
 @Composable
 fun CloudyMoonDarkPreview() {
-    MyThemedPreview(true){
+    MyThemedPreview(true) {
         CloudyMoonBackground(Modifier.fillMaxSize())
     }
-
 }
 
 @Preview
@@ -102,13 +99,12 @@ fun OvercastLightPreview() {
     MyThemedPreview {
         CloudBackground(Modifier.fillMaxSize())
     }
-
 }
 
 @Preview
 @Composable
 fun OvercastDarkPreview() {
-    MyThemedPreview (true){
+    MyThemedPreview(true) {
         CloudBackground(Modifier.fillMaxSize())
     }
 }
@@ -127,9 +123,7 @@ fun RainDarkPreview() {
     MyThemedPreview(true) {
         RainBackground(Modifier.fillMaxSize())
     }
-
 }
-
 
 @Preview
 @Composable
@@ -138,7 +132,6 @@ fun SnowLightPreview() {
         SnowBackground(Modifier.fillMaxSize())
     }
 }
-
 
 @Preview
 @Composable

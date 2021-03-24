@@ -71,7 +71,6 @@ fun OvercastLightPreview() {
     MyThemedPreview {
         CloudBackground(Modifier.fillMaxSize())
     }
-
 }
 
 @Preview

@@ -73,11 +73,11 @@ fun ForecastCard(list: List<Simple>) {
                 itemsIndexed(list) { index, item ->
                     val weekEEE = if (index == 0) stringResource(R.string.today) else item.getWeekEEE()
                     val itemSetSemantics = "$weekEEE ${
-                        stringResource(
-                            R.string.low_high_temp,
-                            item.temperature.min.toString(),
-                            item.temperature.min.toString()
-                        )
+                    stringResource(
+                        R.string.low_high_temp,
+                        item.temperature.min.toString(),
+                        item.temperature.min.toString()
+                    )
                     }, ${stringResource(item.mapWeatherIconRes())}"
                     Column(
                         modifier = Modifier
@@ -117,7 +117,6 @@ fun ForecastCardLightPreview() {
         ForecastCard(repository.getLocationWeather(1).futureDayForecast)
     }
 }
-
 
 @Preview
 @Composable

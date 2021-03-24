@@ -62,7 +62,6 @@ fun SunnyBackground(
     }
 }
 
-
 @Preview
 @Composable
 fun SunnyLightPreview() {

@@ -34,12 +34,10 @@ fun CloudyMoonBackground(
     MoonBackground(modifier = modifier, moonColor = moonColor, showStar = false)
 }
 
-
 @Preview
 @Composable
 fun CloudyMoonDarkPreview() {
     MyThemedPreview(true) {
         CloudyMoonBackground(Modifier.fillMaxSize())
     }
-
 }

@@ -73,23 +73,20 @@ fun HourlyForecastCard(temp: Temperature, list: List<Pair<String, Number>>) {
     }
 }
 
-
 @Preview
 @Composable
 fun HourlyForecastCardLightPreview() {
     val detail = FakeWeatherRepository().getLocationWeather(1)
     MyThemedPreview {
-        HourlyForecastCard(detail.temperature,detail.hourlyForecast)
+        HourlyForecastCard(detail.temperature, detail.hourlyForecast)
     }
 }
-
-
 
 @Preview
 @Composable
 fun HourlyForecastCardDarkPreview() {
     val detail = FakeWeatherRepository().getLocationWeather(1)
     MyThemedPreview(true) {
-        HourlyForecastCard(detail.temperature,detail.hourlyForecast)
+        HourlyForecastCard(detail.temperature, detail.hourlyForecast)
     }
 }

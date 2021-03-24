@@ -50,7 +50,4 @@ fun CloudyLightPreview() {
     MyThemedPreview {
         CloudySunBackground(Modifier.fillMaxSize())
     }
-
 }
-
-

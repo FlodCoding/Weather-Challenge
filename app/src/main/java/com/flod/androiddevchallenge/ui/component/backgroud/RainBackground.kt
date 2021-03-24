@@ -161,7 +161,4 @@ fun RainDarkPreview() {
     MyThemedPreview(true) {
         RainBackground(Modifier.fillMaxSize())
     }
-
 }
-
-
