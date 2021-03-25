@@ -18,11 +18,11 @@ A simple and beautiful weather app, intuitively and dynamically show the current
 
 ## :camera_flash: Screenshots
 <!-- You can add more screenshots here if you like -->
-<img src="/results/screenshot_1.gif" width="260">&emsp;<img src="/results/screenshot_2.gif" width="260">
+<img src="/results/screenshot_1.gif" width="260">&emsp;<img src="/results/screenshot_2.gif" width="260">&emsp;<img src="/results/screenshot_3.gif" width="260">
 
-<img src="/results/screenshot_3.gif" width="260">&emsp;<img src="/results/screenshot_4.gif" width="260">
+<img src="/results/screenshot_4.gif" width="260">&emsp;<img src="/results/screenshot_5.gif" width="260">
 
-<img src="/results/screenshot_5.gif" width="260">
+
 
 
 ## Something Found
