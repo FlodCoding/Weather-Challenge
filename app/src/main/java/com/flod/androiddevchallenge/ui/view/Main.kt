@@ -125,7 +125,7 @@ fun Title(modifier: Modifier, detail: Detail, coroutineScope: CoroutineScope, dr
 
         // Top location name
         val currentLocationDesc = "${stringResource(R.string.current_location)} ${detail.locationName}," +
-            if (detail.isMyLocation) stringResource(R.string.is_my_location) else ""
+                if (detail.isMyLocation) stringResource(R.string.is_my_location) else ""
         Row(
             modifier = Modifier
                 .align(Alignment.Center)
@@ -229,6 +229,10 @@ fun Body(detail: Detail, scrollState: ScrollState) {
         ForecastCard(list = detail.futureDayForecast)
 
         OthersCard(detail = detail)
+
+        Spacer(modifier = Modifier
+            .fillMaxWidth()
+            .height(100.dp))
     }
 }
 
